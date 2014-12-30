@@ -96,7 +96,7 @@ setTimeout(function () {
 
 
                  $.get(
-                 "http://syntheno.netai.net/extract.php?",
+                 "http://syntheno.netai.net/extract.php?url=[url]",
 
                  {url: entry.link, content: 1},
                  function (data) {

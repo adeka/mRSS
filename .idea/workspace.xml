@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2a0d1d8f-53ba-4a84-9c08-b8d3664ccb6a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/parse.js" afterPath="$PROJECT_DIR$/js/parse.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mRSS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +29,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="8" selection-start="680" selection-end="680" vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="20" column="9" selection-start="671" selection-end="671" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="510">
               <folding>
                 <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -48,7 +49,7 @@
       <file leaf-file-name="parse.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/parse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="0" selection-start="2982" selection-end="2982" vertical-scroll-proportion="0.4372146" vertical-offset="1300" max-vertical-offset="2499">
+            <state line="96" column="0" selection-start="2898" selection-end="2898" vertical-scroll-proportion="0.37899545" vertical-offset="1300" max-vertical-offset="2499">
               <folding />
             </state>
           </provider>
@@ -75,6 +76,7 @@
         <option value="$PROJECT_DIR$/js/map.js" />
         <option value="$PROJECT_DIR$/styles/styles.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/index2.html" />
         <option value="$PROJECT_DIR$/js/parse.js" />
       </list>
     </option>
@@ -164,6 +166,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gramp_000\Documents\GitHub\mRSS" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -336,7 +343,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52004457" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.51974386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -364,15 +371,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="8" selection-start="680" selection-end="680" vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="510">
-          <folding>
-            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="1" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
@@ -389,9 +387,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="7" selection-start="694" selection-end="694" vertical-scroll-proportion="0.3655914" vertical-offset="0" max-vertical-offset="837">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="9" selection-start="671" selection-end="671" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="510">
+          <folding>
+            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/parse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="0" selection-start="2982" selection-end="2982" vertical-scroll-proportion="0.4372146" vertical-offset="1300" max-vertical-offset="2499">
+        <state line="96" column="0" selection-start="2898" selection-end="2898" vertical-scroll-proportion="0.37899545" vertical-offset="1300" max-vertical-offset="2499">
           <folding />
         </state>
       </provider>
