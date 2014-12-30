@@ -94,18 +94,18 @@ setTimeout(function () {
                  });
                  */
 
-                /*
+
                  $.get(
-                 "http://syntheno.netai.net/extract.php?&callback=poo",
+                 "http://syntheno.netai.net/extract.php?",
 
                  {url: entry.link, content: 1},
                  function (data) {
-                 //cont = data.content
-                 //console.log(cont);
+                 cont = data.content
+                 console.log(cont);
 
                  }
                  );
-                 */
+
             }
 
             var entryDiv = $("<div></div>")
@@ -129,19 +129,14 @@ setTimeout(function () {
 function poo() {
     console.log("poo");
 }
-
+/*
 $(document).ready(function () {
     $.ajax({
         url: 'http://twitter.com/status/user_timeline/padraicb.json?count=10',
         dataType: 'jsonp',
-        success: function (dataWeGotViaJsonp) {
-            var text = '';
-            var len = dataWeGotViaJsonp.length;
-            for (var i = 0; i < len; i++) {
-                twitterEntry = dataWeGotViaJsonp[i];
-                text += '<p><img src = "' + twitterEntry.user.profile_image_url_https + '"/>' + twitterEntry['text'] + '</p>'
-            }
+        success: function (data) {
             console.log(text);
         }
     });
 });
+    */
