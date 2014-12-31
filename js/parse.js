@@ -7,6 +7,46 @@ var feeds = [];
 
 google.load("feeds", "1");
 
+
+//<![CDATA[
+
+var invocation = new XMLHttpRequest();
+var url = 'http://aruner.net/resources/access-control-with-get/';
+var invocationHistoryText;
+
+function callOtherDomain() {
+    if (invocation) {
+        invocation.open('GET', url, true);
+        invocation.onreadystatechange = handler;
+        invocation.send();
+    }
+    else {
+        invocationHistoryText = "No Invocation TookPlace At All";
+        var textNode = document.createTextNode(invocationHistoryText);
+        var textDiv = document.getElementById("textDiv");
+        textDiv.appendChild(textNode);
+    }
+
+}
+function handler(evtXHR) {
+    if (invocation.readyState == 4) {
+        if (invocation.status == 200) {
+            var response = invocation.responseXML;
+            var invocationHistory = response.getElementsByTagName('invocationHistory').item(0).firstChild.data;
+            invocationHistoryText = document.createTextNode(invocationHistory);
+            // var textDiv = document.getElementById("textDiv");
+            // textDiv.appendChild(invocationHistoryText);
+            console.log(invocationHistoryText)
+
+        }
+        else
+            alert("Invocation Errors Occured");
+    }
+    else
+        dump("currently the application is at" + invocation.readyState);
+}
+//]]>
+
 function article() {
 
 }
@@ -94,7 +134,7 @@ setTimeout(function () {
                  });
                  */
 
-
+                /*
                  $.get(
                  "http://syntheno.netai.net/extract.php?url=[url]",
 
@@ -105,7 +145,8 @@ setTimeout(function () {
 
                  }
                  );
-
+                 */
+                callOtherDomain();
             }
 
             var entryDiv = $("<div></div>")
@@ -129,14 +170,3 @@ setTimeout(function () {
 function poo() {
     console.log("poo");
 }
-/*
-$(document).ready(function () {
-    $.ajax({
-        url: 'http://twitter.com/status/user_timeline/padraicb.json?count=10',
-        dataType: 'jsonp',
-        success: function (data) {
-            console.log(text);
-        }
-    });
-});
-    */
