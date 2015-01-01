@@ -29,7 +29,7 @@ $(document).on('click', ".entry", function () {
         $(this).closest('.article').children('.story').append(loading);
         var id = this;
         $.get(
-            "http://www.codinghs.com/syntheno/textrss/extract.php?url=[url]",
+            "http://syntheno.netai.net/extract.php?url=[url]",
             {url: link, content: 1},
             function (data) {
                 showStory(id, data);
