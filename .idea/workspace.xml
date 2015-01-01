@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2a0d1d8f-53ba-4a84-9c08-b8d3664ccb6a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/parse.js" afterPath="$PROJECT_DIR$/js/parse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/styles.css" afterPath="$PROJECT_DIR$/styles/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mRSS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,25 +28,25 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="6" selection-start="457" selection-end="457" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="527">
+            <state line="16" column="30" selection-start="505" selection-end="505" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="527">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parse.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="parse.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/parse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="5" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="2414">
+            <state line="31" column="75" selection-start="890" selection-end="890" vertical-scroll-proportion="0.2972028" vertical-offset="272" max-vertical-offset="2414">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="6" selection-start="2729" selection-end="2729" vertical-scroll-proportion="0.16200466" vertical-offset="1238" max-vertical-offset="3043">
+            <state line="104" column="17" selection-start="3858" selection-end="3858" vertical-scroll-proportion="0.0" vertical-offset="1238" max-vertical-offset="3043">
               <folding />
             </state>
           </provider>
@@ -75,8 +73,8 @@
         <option value="$PROJECT_DIR$/js/map.js" />
         <option value="$PROJECT_DIR$/index2.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/parse.js" />
         <option value="$PROJECT_DIR$/styles/styles.css" />
+        <option value="$PROJECT_DIR$/js/parse.js" />
       </list>
     </option>
   </component>
@@ -392,23 +390,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/styles/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="17" selection-start="3858" selection-end="3858" vertical-scroll-proportion="0.0" vertical-offset="1238" max-vertical-offset="3043">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="6" selection-start="457" selection-end="457" vertical-scroll-proportion="-4.3333335" vertical-offset="0" max-vertical-offset="527">
+        <state line="16" column="30" selection-start="505" selection-end="505" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="527">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/parse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="5" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="2414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="6" selection-start="2729" selection-end="2729" vertical-scroll-proportion="0.16200466" vertical-offset="1238" max-vertical-offset="3043">
+        <state line="31" column="75" selection-start="890" selection-end="890" vertical-scroll-proportion="0.2972028" vertical-offset="272" max-vertical-offset="2414">
           <folding />
         </state>
       </provider>
