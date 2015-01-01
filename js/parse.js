@@ -7,48 +7,41 @@ var feeds = [];
 
 google.load("feeds", "1");
 
+/*
+ function article() {
 
-//<![CDATA[
+ }
+ */
+$(document).on('click', ".entry", function () {
+    // console.log("ASdF");
+   // $(".story").css("height", "0px");
+   // $(".story").css("padding", "0px");
+    var link = $(this).data('link');
+    //console.log(link);
+    $(this).closest('.article').children('.story').height("80px");
+    $(this).closest('.article').children('.story').css("padding" , "10px");
+    var loading = $('<img class="loading" src="img/loading4.gif">');
+    $(this).closest('.article').children('.story').append(loading);
+    var id = this;
+    $.get(
+        "http://syntheno.netai.net/extract.php?url=[url]",
+        {url: link, content: 1},
+        function (data) {
+            showStory(id, data);
+        }, "jsonp"
+    );
+});
 
-var invocation = new XMLHttpRequest();
-var url = 'http://aruner.net/resources/access-control-with-get/';
-var invocationHistoryText;
+function showStory(id, data) {
 
-function callOtherDomain() {
-    if (invocation) {
-        invocation.open('GET', url, true);
-        invocation.onreadystatechange = handler;
-        invocation.send();
-    }
-    else {
-        invocationHistoryText = "No Invocation TookPlace At All";
-        var textNode = document.createTextNode(invocationHistoryText);
-        var textDiv = document.getElementById("textDiv");
-        textDiv.appendChild(textNode);
-    }
+    //console.log($("#articleText").height());
+    $(id).closest('.article').children('.story').children('.loading').remove();
+    $(id).closest('.article').children('.story').append(data.content);
+    $(id).closest('.article').children('.story').height("500px");
+    //$(id).closest('.article').children('.story').height($("#articleText").height() + "px");
+    // $(id).closest('.article').children('.story').height("1000px");
 
-}
-function handler(evtXHR) {
-    if (invocation.readyState == 4) {
-        if (invocation.status == 200) {
-            var response = invocation.responseXML;
-            var invocationHistory = response.getElementsByTagName('invocationHistory').item(0).firstChild.data;
-            invocationHistoryText = document.createTextNode(invocationHistory);
-            // var textDiv = document.getElementById("textDiv");
-            // textDiv.appendChild(invocationHistoryText);
-            console.log(invocationHistoryText)
-
-        }
-        else
-            alert("Invocation Errors Occured");
-    }
-    else
-        dump("currently the application is at" + invocation.readyState);
-}
-//]]>
-
-function article() {
-
+    //console.log(data);
 }
 
 function initialize() {
@@ -85,88 +78,44 @@ function initialize() {
 
 google.setOnLoadCallback(initialize);
 
-
 setTimeout(function () {
     for (var i = 0; i < results.length; i++) {
         var column = "#column" + (i + 1).toString();
         var entries = results[i].feed.entries;
-        //console.log(entry);
         for (var j = 0; j < entries.length; j++) {
             var entry = entries[j];
-            // var cont = "";
 
-            if (j == 0 && i == 0) {
-                // Using YQL and JSONP
-                /*
-                 $.ajax({
-                 url: "http://syntheno.netai.net/extract.php?url=[url]",
+            var article = $("<div></div>")
+                .addClass("article");
 
-                 // The name of the callback parameter, as specified by the YQL service
-                 jsonp: "callback",
+            var entryDivTop = $("<div data-link=" + entry.link + "></div>")
+                .addClass("entry top gradientTop");
 
-                 // Tell jQuery we're expecting JSONP
-                 dataType: "jsonp",
+            entryDivTop.append("<h2 class='textShadow'>" + entry.title + "</h2>")
 
-                 // Tell YQL what we want and that we want JSON
-                 data: {
-                 q: entry.link,
-                 format: "json"
-                 },
+            var storyDiv = $("<div></div>")
+                .addClass("story");
 
-                 // Work with the response
-                 success: function (response) {
-                 console.log(response); // server response
-                 }
-                 });
-                 */
-                /*
-                 var jqxhr = $.getJSON("http://syntheno.netai.net/extract.php?url=[url]&callback=", function () {
-                 console.log("success");
-                 })
-                 .done(function () {
-                 console.log("second success");
-                 })
-                 .fail(function () {
-                 console.log("error");
-                 })
-                 .always(function () {
-                 console.log("complete");
-                 });
-                 */
+            var entryDivBottom = $("<div data-link=" + entry.link + "></div>")
+                .addClass("entry bottom gradientBottom");
+            entryDivBottom.append("<h4>" + entry.publishedDate + "</h4>");
 
-                /*
-                 $.get(
-                 "http://syntheno.netai.net/extract.php?url=[url]",
-
-                 {url: entry.link, content: 1},
-                 function (data) {
-                 cont = data.content
-                 console.log(cont);
-
-                 }
-                 );
-                 */
-                callOtherDomain();
-            }
-
-            var entryDiv = $("<div></div>")
-                .addClass("entry gradient shadow")
-                .append("<h2 class='textShadow'>" + entry.title + "</h2>")
-                .append("<h4>" + entry.publishedDate + "</h4>")
-                .append("<h4>" + entry.contentSnippet + "</h4>")
-                .append("<h5><a href=" + entry.link + " target='_blank'>Link</h5>");
-            //.append(cont);
-            $(column).append(entryDiv);
+            // entryDiv.data( "link", entry.link );
 
 
-            //console.log(entry.mediaGroup);
+            article.append(entryDivTop);
+            article.append(storyDiv);
+            article.append(entryDivBottom);
+            /*
+             entryDivTop.append("<h2 class='textShadow'>" + entry.title + "</h2>")
+             .append("<h4>" + entry.publishedDate + "</h4>")
+             .append("<h4>" + entry.contentSnippet + "</h4>");
+             // .append("<h5><a href=" + entry.link + " target='_blank'>Link</h5>");
+             */
+            $(column).append(article);
+
         }
-
-        //$( "body" ).append( gallery ).addClass( "snippet" );
-        //var pdiv = $( "p" ).add( "div" );
     }
 }, 1000);
 
-function poo() {
-    console.log("poo");
-}
+
