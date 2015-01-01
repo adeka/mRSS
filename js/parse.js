@@ -13,23 +13,38 @@ google.load("feeds", "1");
  }
  */
 $(document).on('click', ".entry", function () {
-    // console.log("ASdF");
-   // $(".story").css("height", "0px");
-   // $(".story").css("padding", "0px");
-    var link = $(this).data('link');
-    //console.log(link);
-    $(this).closest('.article').children('.story').height("80px");
-    $(this).closest('.article').children('.story').css("padding" , "10px");
-    var loading = $('<img class="loading" src="img/loading4.gif">');
-    $(this).closest('.article').children('.story').append(loading);
-    var id = this;
-    $.get(
-        "http://syntheno.netai.net/extract.php?url=[url]",
-        {url: link, content: 1},
-        function (data) {
-            showStory(id, data);
-        }, "jsonp"
-    );
+    console.log($(this).data('open'));
+
+    if ($(this).data('open') == false) {
+        // console.log("ASdF");
+        // $(".story").css("height", "0px");
+        // $(".story").css("padding", "0px");
+        var link = $(this).data('link');
+        $(this).data('open', true);
+
+        //console.log(link);
+        $(this).closest('.article').children('.story').height("80px");
+        $(this).closest('.article').children('.story').css("padding", "10px");
+        var loading = $('<img class="loading" src="img/loading4.gif">');
+        $(this).closest('.article').children('.story').append(loading);
+        var id = this;
+        $.get(
+            "http://syntheno.netai.net/extract.php?url=[url]",
+            {url: link, content: 1},
+            function (data) {
+                showStory(id, data);
+            }, "jsonp"
+        );
+    }
+    else {
+        $(this).closest('.article').children('.story').empty();
+        $(this).closest('.article').children('.story').height("0px");
+        var id = this;
+        setTimeout(function(){
+            $(id).closest('.article').children('.story').css("padding", "0px");
+        }, 900);
+        $(this).data('open', false);
+    }
 });
 
 function showStory(id, data) {
@@ -88,7 +103,7 @@ setTimeout(function () {
             var article = $("<div></div>")
                 .addClass("article");
 
-            var entryDivTop = $("<div data-link=" + entry.link + "></div>")
+            var entryDivTop = $("<div data-open='false' data-link=" + entry.link + "></div>")
                 .addClass("entry top gradientTop");
 
             entryDivTop.append("<h2 class='textShadow'>" + entry.title + "</h2>")
