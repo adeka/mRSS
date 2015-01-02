@@ -34,13 +34,10 @@ $(document).on('click', ".entry", function () {
         var id = this;
 
         $.ajax({
-            url: "http://syntheno.netai.net/extract.php?",
+            url: "http://filatov.x10host.com/extract.php?",
             data : {url : link},
             type: "GET",
             dataType: 'jsonp',
-            xhrFields: {
-                withCredentials: true
-            },
             success : function(data){
                 showStory(id, data);
             }
