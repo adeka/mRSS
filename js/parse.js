@@ -35,13 +35,30 @@ $(document).on('click', ".entry", function () {
 
         $.ajax({
             url: "http://filatov.x10host.com/extract.php?",
-            data : {url : link},
+            data: {url: link},
             type: "GET",
             dataType: 'jsonp',
-            success : function(data){
+            success: function (data) {
                 showStory(id, data);
             }
         });
+
+        $.ajax({
+            url: "http://termextract.fivefilters.org/extract.php?",
+            data: {
+                //text_or_url: 'url',
+                url: link,
+                max: 5,
+                lowercase: 1,
+                terms_only: 1,
+                output: 'json'},
+            type: "GET",
+            dataType: 'jsonp',
+            success: function (data) {
+                showTags(id, data);
+            }
+        });
+
         /*
          $.getJSON("http://syntheno.netai.net/extract.php?callback=?",
          {url: link, content: 1},
@@ -76,6 +93,7 @@ $(document).on('click', ".entry", function () {
     }
     else {
         $(this).closest('.article').children('.story').empty();
+        $(this).closest('.article').children('.tagContainer').remove();
         $(this).closest('.article').children('.story').height("0px");
         var id = this;
         setTimeout(function () {
@@ -84,6 +102,27 @@ $(document).on('click', ".entry", function () {
         $(this).data('open', false);
     }
 });
+
+function showTags(id, data) {
+
+    var tagContainer = $("<div></div>")
+        .addClass("tagContainer");
+
+    //console.log($("#articleText").height());
+    for (var i = 0; i < data.length; i++) {
+
+        var tag = $("<div>" + data[i] + " " + "</div>")
+            .addClass("tag");
+        tagContainer.append(tag);
+
+    }
+    $(id).closest('.article').children('.top').append(tagContainer);
+
+    //$(id).closest('.article').children('.story').height($("#articleText").height() + "px");
+    // $(id).closest('.article').children('.story').height("1000px");
+
+    //console.log(data);
+}
 
 function showStory(id, data) {
 
@@ -107,9 +146,10 @@ function initialize() {
     var bbcTopNews = "http://feeds.bbci.co.uk/news/rss.xml?edition=int";
     var nprTopNews = "http://www.npr.org/rss/rss.php?id=1004";
     var cnnTopNews = "http://rss.cnn.com/rss/cnn_topstories.rss";
-
+    var reddit = "http://www.reddit.com/r/dota2/.rss";
     feeds.push(reutersTopNews);
     feeds.push(nyTopNews);
+    // feeds.push(reddit);
     // feeds.push(scienceDailyTopNews);
     //feeds.push(abcTopNews);
     feeds.push(bbcTopNews);

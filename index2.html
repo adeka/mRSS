@@ -16,28 +16,34 @@
 <div id="images"></div>
 
 <script>
-    function cb(data){
+    function cb(data) {
         console.log(data);
     }
-    (function () {
-       // var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-        var url = "http://syntheno.netai.net/extract.php?jsoncallback=?";
-        $.getJSON(url, {
-            url: "http://www.cbsnews.com/news/flu-outbreak-taking-hold-on-majority-of-states/",
-            format: "json",
-            callback : "cb"
-        })
-                .done(function (data) {
-                    /*
-                     $.each( data.items, function( i, item ) {
-                     $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
-                     if ( i === 3 ) {
-                     return false;
-                     }
-                     });
-                     */
-                });
-    })();
+    /*
+            $.ajax({
+            url: "http://filatov.x10host.com/extract.php?",
+            data : { url: "https://en.wikipedia.org/wiki/Michael_Tippett"},
+            type: "GET",
+            dataType: 'jsonp',
+            success : function(data){
+              $("#images").append(data.content);
+            }
+        });
+    */
+
+    $.ajax({
+        url: "http://termextract.fivefilters.org/extract.php?",
+        data: {
+            //text_or_url: 'url',
+            url: "http://medialens.org/index.php/alerts/alert-archive/2012/713-the-illusion-of-democracy.html",
+            output: 'json'},
+        type: "GET",
+        dataType: 'jsonp',
+        success: function (data) {
+            console.log(data);
+        }
+    });
+
 </script>
 
 </body>
