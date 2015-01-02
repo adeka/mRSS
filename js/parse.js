@@ -12,8 +12,12 @@ google.load("feeds", "1");
 
  }
  */
+
+function cb(data) {
+    console.log(data);
+}
 $(document).on('click', ".entry", function () {
-    console.log($(this).data('open'));
+    //console.log($(this).data('open'));
 
     if ($(this).data('open') == false) {
         // console.log("ASdF");
@@ -28,19 +32,56 @@ $(document).on('click', ".entry", function () {
         var loading = $('<img class="loading" src="img/loading4.gif">');
         $(this).closest('.article').children('.story').append(loading);
         var id = this;
-        $.get(
-            "http://syntheno.netai.net/extract.php?url=[url]",
-            {url: link, content: 1},
-            function (data) {
+
+        $.ajax({
+            url: "http://syntheno.netai.net/extract.php?",
+            data : {url : link},
+            type: "GET",
+            dataType: 'jsonp',
+            xhrFields: {
+                withCredentials: true
+            },
+            success : function(data){
                 showStory(id, data);
-            }, "jsonp"
-        );
+            }
+        });
+        /*
+         $.getJSON("http://syntheno.netai.net/extract.php?callback=?",
+         {url: link, content: 1},
+         function (result) {
+         showStory(id, result)
+         }).fail(function () {
+         console.log("error");
+         });
+
+         */
+
+        /*
+         $.get(
+         //"http://www.codinghs.com/syntheno/textrss/extract.php?url=[url]",
+         //"http://www.codinghs.com/syntheno/textrss/extract.php?url=[url]&callback=",
+         "http://syntheno.netai.net/extract.php?url=[url]",
+         {url: link, content: 1, callback: "callback"},
+         function (data) {
+         console.log(data);
+
+         //showStory(id, data);
+         }, "jsonp"
+         )
+         .done(function () {
+         console.log("done get");
+         })
+         .fail(function () {
+         console.log("fail get");
+         });
+         */
+
     }
     else {
         $(this).closest('.article').children('.story').empty();
         $(this).closest('.article').children('.story').height("0px");
         var id = this;
-        setTimeout(function(){
+        setTimeout(function () {
             $(id).closest('.article').children('.story').css("padding", "0px");
         }, 900);
         $(this).data('open', false);
