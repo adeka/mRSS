@@ -22,11 +22,11 @@
     }
     (function () {
        // var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-        var url = "http://syntheno.netai.net/extract.php?jsoncallback=?";
+        var url = "http://ftr.fivefilters.org/makefulltextfeed.php?jsoncallback=?";
         $.getJSON(url, {
             url: "http://www.cbsnews.com/news/flu-outbreak-taking-hold-on-majority-of-states/",
-            format: "text/html",
-            callback : "cb"
+            format: "json",
+            jsonpCallback: 'cb'
         })
                 .done(function (data) {
                     /*

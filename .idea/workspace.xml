@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a0d1d8f-53ba-4a84-9c08-b8d3664ccb6a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/parse.js" afterPath="$PROJECT_DIR$/js/parse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index2.html" afterPath="$PROJECT_DIR$/index2.html" />
     </list>
     <ignored path="mRSS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,7 +46,7 @@
       <file leaf-file-name="index2.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="30" selection-start="733" selection-end="733" vertical-scroll-proportion="0.5516827" vertical-offset="0" max-vertical-offset="850">
+            <state line="27" column="25" selection-start="738" selection-end="738" vertical-scroll-proportion="0.5516827" vertical-offset="0" max-vertical-offset="850">
               <folding />
             </state>
           </provider>
@@ -452,7 +451,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="30" selection-start="733" selection-end="733" vertical-scroll-proportion="0.5516827" vertical-offset="0" max-vertical-offset="850">
+        <state line="27" column="25" selection-start="738" selection-end="738" vertical-scroll-proportion="0.5516827" vertical-offset="0" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
