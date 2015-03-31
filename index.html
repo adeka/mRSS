@@ -4,23 +4,33 @@
     <title>Master RSS</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <link rel="stylesheet" href="styles/styles.css"/>
     <script src="js/firebase.js"></script>
     <script src="js/parse.js"></script>
 </head>
+<nav>
+  <i id="pickFeeds" class="fa fa-check-square-o fa-3x"></i>
+  <i id="showFeeds" class="fa fa-reorder fa-3x"></i>
+  <i id="profile" class="fa fa-user fa-3x"></i>
+  <i class="fa fa-newspaper-o fa-3x" id="close"></i>
+  <img class="loading" src="img/loading4.gif">
+  <!--<i class="fa fa-spinner fa-pulse loading"></i>-->
+</nav>
 <body>
+<div id="feeds">
+  <div id="worldnews" class="feedButton"><i class="fa fa-check-square-o"></i> worldnews</div>
+  <div id="technology" class="feedButton"><i class="fa fa-square-o"></i> technology</div>
+  <div id="science" class="feedButton"><i class="fa fa-square-o"></i> science</div>
+  <div id="pics" class="feedButton"><i class="fa fa-square-o"></i> pics</div>
+  <div id="writing" class="feedButton"><i class="fa fa-square-o"></i> writing</div>
+</div>
+<div id="panel"></div>
 <div class="bggradientBottom"></div>
-<table>
-    <tr>
-        <td id="column1"></td>
-        <td id="column2"></td>
-        <td id="column3"></td>
-        <td id="column4"></td>
-        <td id="column5"></td>
-    </tr>
-</table>
+<div class="column">
+
+</div>
 </body>
 </html>

@@ -32,17 +32,34 @@
     */
 
     $.ajax({
-        url: "http://termextract.fivefilters.org/extract.php?",
-        data: {
-            //text_or_url: 'url',
-            url: "http://medialens.org/index.php/alerts/alert-archive/2012/713-the-illusion-of-democracy.html",
-            output: 'json'},
+        url: "http://filatov.x10host.com/extract.php?",
+        data: {url : "https://en.wikipedia.org/wiki/Oliver_Bosbyshell"},
         type: "GET",
         dataType: 'jsonp',
         success: function (data) {
-            console.log(data);
+            //console.log($(data.content).text());
+            var textString = $(data.content).text().substring(0,4200);
+            var textString2 = "After leaving the army, Bosbyshell returned to Pennsylvania and worked in two unsuccessful businesses; he also involved himself in Republican politics and in the activities of the Grand Army of the Republic, a veteran's group. He was appointed to a post at the Philadelphia Mint in 1869, and became chief coiner in 1876 and superintendent in 1889, serving for four years. One of Bosbyshell's underlings at the mint stole gold bars and, as they were not all recovered when the culprit was arrested, Bosbyshell was held responsible for the loss by virtue of his office. He was absolved of this liability by act of Congress in 1899. In his later years, he was an officer of an insurance company; he died in 1921."
+            term(textString);
+            //term(data);
         }
     });
+
+    function term(data){
+        $.ajax({
+            //url: "http://termextract.fivefilters.org/extract.php?",
+            url : 'http://filatov.x10host.com/GetTerms.php?',
+            data: {
+                text:  data,
+                output: 'json'},
+            type: "GET",
+            dataType: 'jsonp',
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+
 
 </script>
 
